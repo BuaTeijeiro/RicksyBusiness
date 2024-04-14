@@ -1,6 +1,7 @@
 package ricksybusiness;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Receptivo {
     ArrayList<GuestDispatcher> dispatchers = new ArrayList<>();
@@ -16,6 +17,12 @@ public class Receptivo {
     public void dispatch(CreditCard tarjeta){
         for (GuestDispatcher dispatcher : this.dispatchers){
             dispatcher.dispatch(tarjeta);
+        }
+    }
+
+    public void dispatchMenu(List<CreditCard> tarjetas){
+        for (CreditCard tarjeta: tarjetas){
+            dispatch(tarjeta);
         }
     }
 

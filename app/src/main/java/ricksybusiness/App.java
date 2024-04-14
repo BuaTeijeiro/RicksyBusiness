@@ -3,6 +3,9 @@
  */
 package ricksybusiness;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Ricksy Business
  * ===============
@@ -204,6 +207,45 @@ public class App {
         morty = new CreditCard("Morty", "0000000000000000");
         receptivo.dispatch(morty);
         mostrarReserva(morty, packExpender, ufosPark);
+
+        /**
+         * A por el 10!! 
+         * Wubba lubba dub dub!!
+         * 
+         * Añade otra tarea al receptivo,
+         * de modo que 5 invitados:
+         * abradolph, squanchy, morty, gearHead, birdpearson
+         * encarguen un RickMenú junto 
+         * al ovni y al pack de bienvenida.
+         * Hay 100 RickMenús y su precio es de 10 EZIs.
+         * Muestra el total de pedidos y la lista de
+         * invitados/as que han hecho un pedido.
+         */
+
+         // tu código aquí
+
+        CrystalExpender rickyMenu = new CrystalExpender(100, 10.0);
+        
+        receptivo.registra(rickyMenu);
+        List<CreditCard> tarjetas = new ArrayList<>();
+        tarjetas.add(abradolph);
+        tarjetas.add(squanchy);
+        tarjetas.add(morty);
+        tarjetas.add(gearHead);
+        tarjetas.add(birdpearson);
+        
+        receptivo.dispatchMenu(tarjetas);
+        System.out.println("Pedidos de RickMenus");
+        System.out.println("==================");
+        System.out.println(rickyMenu);
+
+        System.out.println("Creditos de los invitados/as");
+        System.out.println("==================");
+        for (CreditCard tarjeta: tarjetas){
+            System.out.println(tarjeta);
+        }
+
+
     }
 
 
