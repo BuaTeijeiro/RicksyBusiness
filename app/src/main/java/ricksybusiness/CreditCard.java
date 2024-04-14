@@ -12,7 +12,7 @@ public class CreditCard {
         this.credit = 3000.0;
     }
 
-    private String getOwner() {
+    String getOwner() {
         return owner;
     }
 
@@ -22,6 +22,16 @@ public class CreditCard {
 
     public double credit() {
         return credit;
+    }
+
+    public void pay(double cost){
+        if (this.canAfford(cost)){
+            this.credit -= cost;
+        }
+    }
+
+    public boolean canAfford(double cost){
+        return cost <= this.credit;
     }
 
     @Override
