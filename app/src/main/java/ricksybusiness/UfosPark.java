@@ -56,4 +56,9 @@ public class UfosPark {
                                                     .findFirst();
         return ufo.isPresent()?  ufo.get().getKey() : null;
     }
+
+    @Override
+    public String toString(){
+        return this.flota.keySet().toString();
+    }
 }
