@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class UfosPark {
+public class UfosPark implements GuestDispatcher {
     private double fee = 500.0;
     private Map<String,String> flota = new HashMap<>();
     
@@ -26,6 +26,7 @@ public class UfosPark {
         return this.flota.size();
     }
 
+    @Override
     public void dispatch(CreditCard tarjeta){
         Optional<String> availableUfo = getAvailableUfo();
         if (!hasUfo(tarjeta) && availableUfo.isPresent() && tarjeta.canAfford(getFee())){
