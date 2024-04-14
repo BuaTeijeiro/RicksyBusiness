@@ -43,6 +43,25 @@ public class App {
                                   "===================="        );
         System.out.println(abradolph);
 
+           /**
+         * Construye el componente de reserva de Ovnis.
+         * Recibe el objeto tarjeta de crédito del invitado/a
+         * en el método dispatch(card)
+         * y realiza un cargo a la tarjeta.
+         * Si hay saldo suficiente se reserva un UberOvni
+         * de los que estén libres.
+         * El coste del ovni es de 500 EZIs.
+         */
+
+         UfosPark ufosPark = new UfosPark();
+
+         // Da de alta en la flota de ovnis 2 UFOS.
+ 
+         String[] ufosID = { "unx", "dox" };
+         for (String ovni : ufosID) {
+             ufosPark.add(ovni);
+         }
+
 
 
     //private static void mostrarReserva(CreditCard card, CrystalExpender expender, UfosPark ufos) {
