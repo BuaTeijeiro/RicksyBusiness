@@ -3,6 +3,7 @@ package ricksybusiness;
 public class CrystalExpender implements GuestDispatcher{
     private int stock;
     private double itemCost;
+    
 
     public CrystalExpender(int stock, double itemCost) {
         this.stock = stock;
@@ -19,7 +20,15 @@ public class CrystalExpender implements GuestDispatcher{
 
     @Override
     public void dispatch(CreditCard tarjeta) {
-        
+        if (this.stock() > 0 && tarjeta.canAfford(itemCost)){
+            tarjeta.pay(itemCost);
+            this.sellStock();
+        }
+    }
+
+    void sellStock(){
+        if (this.stock() > 0){
+         this.stock -= 1;}
     }
 
     @Override
